@@ -1,0 +1,38 @@
+<p>Mes 10 dernières opérations :</p>
+<ol>
+  <table>
+    <tr>
+      <th>Numéro</th>
+      <th>Op1</th>
+      <th>Op</th>
+      <th>Op2</th>
+      <th>=</th>
+      <th>Res</th>
+      <th></th>
+    </tr>
+    @for(op of liste.getListe() | slice : 0 : 10 ; track $index) {
+    <tr>
+      <td>
+        {{ $index + 1 }}
+      </td>
+      <td>
+        {{ op.op1 }}
+      </td>
+      <td>
+        {{ op.op }}
+      </td>
+      <td>
+        {{ op.op2 }}
+      </td>
+      <td>=</td>
+      <td>
+        {{ op.res }}
+      </td>
+      <td>
+        <button (click)="reload($index)">Load</button>
+        <button (click)="delete($index)">Del</button>
+      </td>
+    </tr>
+    }
+  </table>
+</ol>

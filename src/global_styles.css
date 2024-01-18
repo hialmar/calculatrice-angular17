@@ -1,0 +1,13 @@
+/* Add application styles & imports to this file! */
+p {
+  font-family: Lato;
+}
+
+button {
+  color: white;
+  background-color: green;
+}
+
+button:disabled {
+  background-color: black;
+}

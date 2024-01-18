@@ -1,0 +1,35 @@
+MIAGE Calculator
+<p>
+  Op1 : <input type="number" [(ngModel)]="op1" (click)="choisit(1)"/><br />
+  Op2 : <input type="number" [(ngModel)]="op2" (click)="choisit(2)"/><br />
+  <button (click)="plus()">+</button>
+  <button (click)="moins()">-</button>
+  <button (click)="div()" [disabled]="op2 === 0">/</button>
+  <button (click)="mult()">*</button>
+  <br>
+  <button (click)="ajoute(7)">7</button>
+  <button (click)="ajoute(8)">8</button>
+  <button (click)="ajoute(9)">9</button>
+  <br>
+  <button (click)="ajoute(4)">4</button>
+  <button (click)="ajoute(5)">5</button>
+  <button (click)="ajoute(6)">6</button>
+  <br>
+  <button (click)="ajoute(1)">1</button>
+  <button (click)="ajoute(2)">2</button>
+  <button (click)="ajoute(3)">3</button>
+  <br>
+  <button (click)="ajoute(0)">0</button>
+  <button (click)="ajouteVirgule()">,</button>
+  
+  <br />
+  Res : <input type="text" [value]="res" readonly /><br />
+</p>
+
+<p>
+  <app-memoire [res]="res" (emetteur)="rec($event)"></app-memoire>
+</p>
+
+<p>
+  <app-liste (emetteur)="reload($event)"></app-liste>
+</p>
